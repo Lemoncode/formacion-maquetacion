@@ -106,7 +106,7 @@ Ambas visualizaciones están condicionadas por el comportamiento de la caja.
 
 ## Propiedad display
 
-La propiedad display controla el comportamiento tanto externo como interno de un elemento.
+La propiedad display establece el tipo de visualización tanto externa como interna de un elemento.
 
 Principales valores:
 
