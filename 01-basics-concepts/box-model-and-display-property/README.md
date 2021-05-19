@@ -1,6 +1,6 @@
 # Modelo de caja
 
-Para **CSS** todo elemento **HTML** es tratado como una caja. El modelo define cómo funcionan juntas las diferentes partes de una caja para crear una caja que puedas ver en tu página.
+Para **CSS** todo elemento **HTML** es tratado como una caja. El modelo define cómo funcionan juntas las diferentes partes de una caja para crear un elemento que puedas ver en tu página.
 
 ####Partes de una caja
 
