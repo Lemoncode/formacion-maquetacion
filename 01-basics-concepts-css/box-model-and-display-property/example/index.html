@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="styles.css" />
+		<title>Ejemplos de modelos de caja</title>
+	</head>
+	<body>
+		<h1>Modelo de cajas</h1>
+
+		<!-- block -->
+		<h2 class="title">en Bloque (block)</h2>
+		<div class="container">
+			<p class="block">
+				Soy un modelo de caja en bloque y por eso ocupo un ancho del 100%
+			</p>
+		</div>
+
+		<!-- inline -->
+		<h2 class="title">en Línea (inline)</h2>
+		<div class="container">
+			<span class="inline inline1"
+				>Soy un modelo de caja en línea y las propiedades width y height no me
+				afectan.</span
+			>
+			<span class="inline inline2">Soy otro modelo de caja en línea.</span>
+		</div>
+
+		<!-- inline-block -->
+		<h2 class="title">Inline-block</h2>
+		<p>
+			El contenedor toma el ancho del contenido sin tener en cuenta sus márgenes
+			ni rellenos.
+		</p>
+		<div class="container inline-block">
+			<span class="inline inline1"
+				>Soy un modelo de caja en línea dentro de un elemento con
+				<strong>display: inline-block</strong>.</span
+			>
+			<span class="inline inline2">Soy otro modelo de caja en línea.</span>
+		</div>
+
+		<!-- flex -->
+		<h2 class="title">Flex</h2>
+		El contenedor padre con <strong>display: flex</strong> cambia el modelo de
+		caja por defecto de sus elementos hijos.
+		<div class="container flex">
+			<span class="inline inline1"
+				>Soy un modelo de caja en línea y las propiedades width y height no me
+				afectan.</span
+			>
+			<span class="inline inline2">Soy otro modelo de caja en línea.</span>
+		</div>
+
+		<!-- inline-flex -->
+		<h2 class="title">inline-flex</h2>
+		El contenedor padre con <strong>display: inline-flex</strong> no provoca un
+		salto de línea y cambia el modelo de caja por defecto de sus elementos
+		hijos.
+		<div class="container inline-flex">
+			<span class="inline inline1"
+				>Soy un modelo de caja en línea y las propiedades width y height no me
+				afectan.</span
+			>
+			<span class="inline inline2">Soy otro modelo de caja en línea.</span>
+		</div>
+
+		<!-- grid -->
+		<h2 class="title">Grid</h2>
+		El contenedor padre con <strong>display: grid</strong> cambia el modelo de
+		caja por defecto de sus elementos hijos.
+		<div class="container grid">
+			<span class="inline inline1"
+				>Soy un modelo de caja en línea y las propiedades width y height no me
+				afectan.</span
+			>
+			<span class="inline inline2">Soy otro modelo de caja en línea.</span>
+		</div>
+
+		<!-- inline-grid -->
+		<h2 class="title">inline-grid</h2>
+		El contenedor padre con <strong>display: inline-grid</strong> cambia el
+		modelo de caja por defecto de sus elementos hijos.
+		<div class="container inline-grid">
+			<span class="inline inline1"
+				>Soy un modelo de caja en línea y las propiedades width y height no me
+				afectan.</span
+			>
+			<span class="inline inline2">Soy otro modelo de caja en línea.</span>
+		</div>
+
+		<!-- none -->
+		<h2 class="title">none</h2>
+		El contenedor padre con <strong>display: none</strong> desaparece del
+		documento junto con sus elementos hijos.
+		<div class="container none">
+			<span class="inline inline1"
+				>Soy un modelo de caja en línea y las propiedades width y height no me
+				afectan.</span
+			>
+			<span class="inline inline2">Soy otro modelo de caja en línea.</span>
+		</div>
+	</body>
+</html>
