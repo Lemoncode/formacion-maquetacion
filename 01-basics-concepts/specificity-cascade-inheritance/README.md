@@ -4,7 +4,7 @@ _"La especificidad es la manera mediante la cual los navegadores deciden qué va
 
 La especificidad se calcula en base a la jerarquía de los selectores y en función del orden y lugar donde estén ubicados los estilos.
 
-Aunque pensemos en términos de selectores y reglas, no es toda la regla lo que se sobrescribe, sino solo las propiedades que entran en conflicto.
+Aunque pensemos en términos de selectores y reglas, no es toda la regla la que se sobrescribe, sino solo las propiedades que entran en conflicto.
 
 Si dos reglas o propiedades en conflicto tienen la misma especificidad se aplicará siempre la de más abajo (la procesada más recientemente).
 
@@ -27,13 +27,27 @@ Si dos reglas o propiedades en conflicto tienen la misma especificidad se aplica
   	.header {
   		color: blue;
   	}
+  	#title {
+  		...styles;
+  	}
   </style>
 
   <!-- Selector de atributo -->
-  <a href="https://lemoncode.net">Lemoncode</a>
+  <a id="lemon" class="code" href="https://lemoncode.net">Lemoncode</a>
+  <img class="logo" src="logo.png" />
+
   <style>
   	a[href="https:/lemoncode.net"] {
   		color: green;
+  	}
+  	.logo {
+  		...styles;
+  	}
+  	img[src="logo.png"] {
+  		...styles;
+  	}
+  	img:hover {
+  		...styles;
   	}
   </style>
 
@@ -77,7 +91,7 @@ p {
 ```
 
 - **El uso de `!important` está considerado como una mala práctica**.
-- Su uso hace que el código sea más dificil de depurar.
+- Su uso hace que el código sea más difícil de depurar.
 - Utilízalo solo cuando realmente sea necesario, por ejemplo se puede dar el caso que al utilizar una librería externa como `Bootstrap` sea necesario para poder sobrescribir una propiedad.
 
 ---
