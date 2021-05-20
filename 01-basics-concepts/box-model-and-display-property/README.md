@@ -5,12 +5,12 @@ Para **CSS** todo elemento **HTML** es tratado como una caja. El modelo define c
 ####Partes de una caja
 
 - **Contenido**: Es el área donde se muestra el contenido y su tamaño puede ser modificado con las propiedades `width` y `height`.
-- **Relleno**: O **padding** es el espacio en blanco alrededor del contenido y podemos controlar su tamañano con la propiedad `padding` y otras relacionadas.
+- **Relleno**: O **padding** es el espacio en blanco alrededor del contenido y podemos controlar su tamaño con la propiedad `padding` y otras relacionadas.
 - **Borde**: Envuelve el contenido y el relleno de la caja. Es controlado por la propiedad `border` y otras relacionadas.
 - **Margen**: Es la capa más externa y envuelve el contenido, el relleno y el borde como espacio en blanco entre la caja y otros elementos. Controlamos su tamaño con la propiedad `margin` y otras relacionadas.
   ![Modelo de caja](box-model.png)
 
-> **Debemos tener claro y saber diferenciar dos aspecto; el espacio que ocupa una caja y el tamaño de esa caja. Lo primero hace referencia al espacio que ocupa la caja en la página. Lo segundo al tamaño visible de la caja.**
+> **Debemos tener claro y saber diferenciar dos aspectos; el espacio que ocupa una caja y el tamaño de esa caja. Lo primero hace referencia al espacio que ocupa la caja en la página. Lo segundo al tamaño visible de la caja.**
 
 ### Tipos de modelo de cajas.
 
@@ -68,7 +68,7 @@ Añadimos la propiedad `box-sizing` en el elemento `<html>` y hacemos que el res
 
 Todo elemento HTML tiene definido por defecto un tipo de comportamiento el cual puede ser modificado como veremos más adelante.
 
-> Una caja por defecto puede ser de dos tipos, `caja en bloque` o `caja en línea` y esto define como se comportará en relación a la página y a el resto de elementos.
+> Una caja por defecto puede ser de dos tipos, `caja en bloque` o `caja en línea` y esto define como se comportará en relación a la página y al resto de elementos.
 
 #### Comportamiento por defecto de la caja en bloque:
 
@@ -98,9 +98,9 @@ Existe un tercer tipo de comportamiento especial que proporciona un punto medio 
 
 Ambas visualizaciones están condicionadas por el comportamiento de la caja.
 
-- **Externa**. Determina como un elemento interactua y fluye respescto al documento y/o los elementos que le rodean.
+- **Externa**. Determina como un elemento interactua y fluye respecto al documento y/o los elementos que le rodean.
 
-- **Interna**. Determina cómo se disponen e interactuan los elementos dentro de una caja. Por defecto se dispondrán según la visualización externa de cada elemento o flujo normal (flow layout).
+- **Interna**. Determina cómo se disponen e interactúan los elementos dentro de una caja. Por defecto se dispondrán según la visualización externa de cada elemento o flujo normal (flow layout).
 
 ---
 
@@ -115,9 +115,9 @@ Principales valores:
 - **{display: inline-block}** Comportamiento externo en bloque pero sin forzar un salto de línea e interno con su flujo normal.
 - **{display: flex}**. Comportamiento externo en bloque e interno como flexible.
 - **{display: inline-flex}**. Comportamiento externo en bloque pero sin forzar un salto de línea e interno como flexible.
-- **{display: grid}**. Comportamiento externo como block e interno como regilla.
-- **{display: inline-grid}**. Comportamiento externo en bloque pero sin forzar un salto de línea e interno como regilla.
-- **{display: none}**. El documento se procesa como si el elemento no existiera en el árbol de documentos. Todos los elementos descendentes también quedan desactivados.
+- **{display: grid}**. Comportamiento externo como block e interno como rejilla.
+- **{display: inline-grid}**. Comportamiento externo en bloque pero sin forzar un salto de línea e interno como rejilla.
+- **{display: none}**. El documento se procesa como si el elemento no existiera en el árbol de documentos. Todos los elementos descendientes también quedan desactivados.
 
 Otros valores: https://developer.mozilla.org/es/docs/Web/CSS/display
 
