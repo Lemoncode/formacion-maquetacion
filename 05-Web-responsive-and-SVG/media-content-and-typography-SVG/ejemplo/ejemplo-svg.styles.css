@@ -105,7 +105,7 @@
 .svg {
 	fill: red;
 	stroke: #00bb2d;
-	stroke-width: 3px;
+	stroke-width: 1px;
 	border: 1px solid blue;
 	display: flex;
 	margin: 2% auto;

@@ -114,9 +114,22 @@
 		</div>
 		<div class="container">
 			<h3>Ejemplo dibujando con SVG</h3>
-			<p>Aquí directamente estamos dibujando con SVG</p>
+			<p>
+				Aquí directamente estamos dibujando con SVG podemos ver como el texto
+				toma ciertas propiedades como el borde
+			</p>
 			<svg class="svg">
-				<circle cx="75" cy="75" r="60" />
+				<circle
+					cx="75"
+					cy="75"
+					r="60"
+					stroke="blue"
+					fill="purple"
+					fill-opacity="0.5"
+					stroke-opacity="0.8"
+					stroke-width="5"
+				/>
+				<text x="10" y="10">Hello World!</text>
 			</svg>
 		</div>
 	</body>
