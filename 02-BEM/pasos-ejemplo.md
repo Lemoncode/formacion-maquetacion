@@ -1,0 +1,4 @@
+- Mostrar estructura
+- Mostrar ejemplo de componente avatar.
+  - quitar estilos avatar
+  - cargar componente
