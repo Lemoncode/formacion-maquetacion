@@ -1,0 +1,27 @@
+input {
+  padding: 5px;
+}
+
+input:focus {
+  background-color: darkolivegreen;
+  color: white;
+}
+
+input:hover {
+  border: 5px solid rebeccapurple;
+}
+
+/* cada dos elementos */
+.container div:nth-child(2n) {
+  /* even */
+  color: darkgoldenrod;
+}
+
+.container div:nth-child(2n + 1) {
+  /* odd */
+  color: darkgreen;
+}
+
+.container div:last-child {
+  color: red;
+}

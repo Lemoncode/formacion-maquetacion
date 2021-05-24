@@ -1,0 +1,35 @@
+[href] {
+  font-size: 125%;
+  padding: 8px;
+}
+
+[href*="lemoncode"] {
+  background-color: green;
+  color: white;
+}
+
+[title="Email"] {
+  text-decoration: none;
+}
+
+[href$=".pdf"] {
+  background-color: indianred;
+  color: white;
+}
+
+[href$=".txt"] {
+  background-color: darkblue;
+  color: white;
+}
+
+[class~="web-site"] {
+  background-color: darkcyan;
+  color: white;
+}
+
+/*Nota: El valor tiene que ser una palabra completa, ya sea solo, como class="top" , o seguido de un guión ( - ) , como class="top-text" !*/
+
+[lang|="es"] {
+  background-color: darkred;
+  color: white;
+}

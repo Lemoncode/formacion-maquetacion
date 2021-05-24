@@ -1,0 +1,23 @@
+p:first-line {
+  font-weight: bold;
+}
+
+p::first-letter {
+  font-size: 350%;
+}
+
+p::selection {
+  background-color: darkorange;
+  color: white;
+}
+
+p::after {
+  content: "... [+]";
+  cursor: pointer;
+}
+
+div.marca::before {
+  content: "©";
+  padding-right: 6px;
+  font-weight: bold;
+}
