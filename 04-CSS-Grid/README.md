@@ -2,7 +2,8 @@
 
 ### Qué es CSS Grid
 
-Es un sistema de maquetación en regilla pensado para distribuir el contenido en filas y/o columnas. También permite dividir una página o elemento en áreas o regiones.
+Es un sistema de maquetación en regilla pensado para distribuir el contenido en filas y/o columnas. Esto nos permite trabajar sobre dos ejes, el horizontal (x) y el vertical (y).
+También permite dividir una página o elemento en áreas o regiones.
 El grid se define en la propiedad `display` con el valor `display: grid` o `display: inline-grid`. Una vez definido, todos los hijos directos se convertirán en elementos de la cuadrícula.
 
 ![Ejemplo grid](./assets/grid.png)
@@ -33,8 +34,12 @@ El grid se define en la propiedad `display` con el valor `display: grid` o `disp
 
 #### Estructura del grid
 
-- **grid-template-columns** define el ancho de una o varias columnas de manera individual `grid-template-columns: 50px 20% 1fr auto;`
-- **grid-template-rows** define el alto de una o varias filas de manera individual `grid-template-rows: 100px 100px 200px;`
+> Antes de ver las siguientes propiedades tenemos que tener claros dos conceptos claves, la `cuadrícula implícita` y la `cuadrícula explícita`.
+> Cuando hablamos de **cuadrícula explícita** nos referimos a las filas y columnas que definimos mediante algunas propiedades que veremos a continuación.
+> La **cuadrícula implícita** hace referencia a las filas y columnas no definidas pero que grid las creará para el contenido si fuera necesario. Este comportamiento también podremos controlarlo como veremos más adelante.
+
+- **grid-template-columns** define el ancho de una o varias columnas de manera individual pudiendo asignar un nombre a cada una de las líneas (verticales) `grid-template-columns: [primera-linea] 50px [segunda-linea] 20% 1fr auto [ultima-linea];`
+- **grid-template-rows** define el alto de una o varias filas de manera individual pudiendo asignar un nombre a cada una de las líneas (horizontales) `grid-template-rows: 100px 100px 200px;`
 - **grid-template-areas** define y da nombre a cada uno de los **grid area**
 
   ```css
@@ -62,9 +67,11 @@ El grid se define en la propiedad `display` con el valor `display: grid` o `disp
   > Ejemplo: Tenemos definido un grid container de 2\*2 donde caben 4 elementos pero es posible que nuestra aplicación genere algún elemento más.
   > Con la propiedad **grid-auto-flow: column** y **grid-auto-columns: 100px** establecemos que todo elemento que venga de más se establezca en nuevas columnas con un ancho de 100px.
 
-#### Posicionar elementos en el grid
+#### Posicionar elementos repecto a las líneas
 
-- **grid-row-start || grid-row-end || grid-column-start || grid-column-end** se pueden usar de manera individual o conjunta para definir el inicio y fin de la fila y columna. Por ejemplo, si queremos que un elemento ocupe de la fila 2 y las columnas 2 y 3 lo indicaríamos así:
+- **grid-row-start || grid-row-end || grid-column-start || grid-column-end** se pueden usar de manera individual o conjunta para definir el inicio y fin de la fila y columna.
+  Si las columnas y filas se han definido nombradas (grid-template-columns) podemos utilizar el nombre en vez del número `grid-row-start: primera-linea;`
+  Por ejemplo, si queremos que un elemento ocupe la fila 2 y las columnas 2 y 3 lo indicaríamos así:
 
   ```css
   .element {
@@ -99,3 +106,140 @@ El grid se define en la propiedad `display` con el valor `display: grid` o `disp
     ```css
     grid-row: 1 / auto;
     ```
+
+#### Espaciado entre elementos en el grid
+
+- **row-gap** || **column-gap** || **gap** definen el gutter o espaciado entre columnas y filas.
+
+  - **row-gap** establece la separación entre filas `row-gap: 10px;`
+  - **column-gap** establece la separación entre columnas `column-gap: 10px;`
+  - **gap** es la propiedad abreviada o shorthand. Establece la separación entre filas y columnas, si sólo se proporciona un valor este se aplica para ambas `gap: 10px 20px;`
+
+  ![Ejemplo gap](./assets/grid-gap.png)
+
+### Funciones
+
+- **repeat()** Esta función puede ser usada en las propiedades `grid-template-columns` y `grid-template-rows`. Con ella podemos definir un número repetido de filas o columnas. La función admite dos parámetros, el primero es el número de repeticiones y el segundo el tamaño. Para crear cuatro columnas de 100px escribiríamos `grid-template-columns: repeat(4, 100px);`
+- **minmax()** define un rango de tamaño mayor o igual que min y menor o igual que max. Puede ser usada dentro de: `grid-template-columns` `grid-template-rows` `grid-auto-columns` `grid-auto-rows`. Por ejemplo `grid-template-columns: minmax(50px, 100px) 1fr 1fr;`
+
+### Valores
+
+- **min-content** define el tamaño más pequeño de una caja sin que el contenido llegue a desbordar.
+- **max-content** define el tamaño máximo de una caja en función de su contenido, es decir minimiza el espacio vacío y evita el desbordamiento. Si tenemos un contenedor padre con un ancho infinito y establecemos este valor a un elemento hijo cuyo contenido es un texto, el ancho máximo que ocupará será el que marque dicho texto.
+- **fr** Grid introduce esta nueva unidad de medida. Lo que representa es una fracción del espacio disponible en el grid container. Al utilizarla podemos crear elementos que se expanden y encogen de acuerdo al espacio disponible.
+
+> Podemos utilizar estos valores en las funciones anteriores para definir tamaños en filas y columnas.
+
+### Alineación de elementos en un grid
+
+#### justify-content || align-content
+
+Permiten alinear los elementos de manera horizontal (justify-content) y vertical (align-content) dentro del grid container.
+
+- **flex-start** posiciona la cuadrícula al inicio de su espacio vertical y/o horizontal.
+  ```css
+  justify-content: flex-start;
+  ```
+  ![ejemplo flex-start](./assets/flex-start.png)
+
+---
+
+- **flex-end** posiciona la cuadrícula al final de su espacio vertical y/o horizontal.
+  ```css
+  justify-content: flex-end;
+  align-content: flex-end;
+  ```
+  ![ejemplo flex-end](./assets/flex-end.png)
+
+---
+
+- **center** posiciona la cuadrícula en el centro de su espacio vertical y/o horizontal.
+  ```css
+  justify-content: center;
+  align-content: center;
+  ```
+  ![ejemplo center](./assets/center.png)
+
+---
+
+- **space-around** distribuye los grid items en el espacio disponible vertical y/o horizontal dejando el mismo espaciado entre ellos y otro variable alrededor.
+  ```css
+  justify-content: space-around;
+  align-content: space-around;
+  ```
+  ![ejemplo space-around](./assets/space-around.png)
+
+---
+
+- **space-evenly** distribuye los grid items en el espacio disponible vertical y/o horizontal dejando el mismo espaciado entre y alrededor de ellos.
+  ```css
+  justify-content: space-evenly;
+  align-content: space-evenly;
+  ```
+  ![ejemplo space-evenly](./assets/space-evenly.png)
+
+---
+
+- **space-between** distribuye los grid items en el espacio disponible vertical y/o horizontal dejando el mismo espaciado entre ellos pero sin espaciado alrededor.
+  ```css
+  justify-content: space-between;
+  align-content: space-between;
+  ```
+  ![ejemplo space-between](./assets/space-between.png)
+
+#### justify-items || align-items
+
+Permiten alinear los elementos contenidos en los **grid items** de manera simétrica en su espacio horizontal (justify-items) y en el vertical (align-items).
+
+- **flex-start** posiciona los elementos al inicio de su espacio vertical y/o horizontal.
+  ```css
+  justify-items: flex-start;
+  ```
+  ![ejemplo flex-start](./assets/flex-start.items.png)
+
+---
+
+- **flex-end** posiciona los elementos al final de su espacio vertical y/o horizontal.
+  ```css
+  justify-items: flex-end;
+  align-items: flex-end;
+  ```
+  ![ejemplo flex-end](./assets/flex-end.items.png)
+
+---
+
+- **center** posiciona los elementos en el centro de su espacio vertical y/o horizontal.
+  ```css
+  justify-items: center;
+  align-items: center;
+  ```
+  ![ejemplo center](./assets/center.items.png)
+
+---
+
+- **stretch** los elementos cubren todo el espacio que tienen disponible verticalmente si la propiedad es align-items o horizontalmente si la propiedad es justify-items.
+  ```css
+  justify-items: stretch;
+  align-items: flex-end;
+  ```
+  ![ejemplo center](./assets/stretch.items.png)
+
+---
+
+#### justify-selft || align-selft
+
+Permite las diferentes alineaciones anteriormente vistas aplicando la propiedad a cada grid item de manera individual. justify-self para horizontal y align-self para vertical.
+
+```css
+justify-items: stretch;
+align-items: flex-end;
+.grid-itemD {
+	align-self: center;
+}
+```
+
+![ejemplo center](./assets/align-self.items.png)
+
+---
+
+> https://developer.mozilla.org/es/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout
