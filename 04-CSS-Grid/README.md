@@ -2,7 +2,7 @@
 
 ### Qué es CSS Grid
 
-Es un sistema de maquetación en regilla pensado para distribuir el contenido en filas y/o columnas. Esto nos permite trabajar sobre dos ejes, el horizontal (x) y el vertical (y).
+Es un sistema de maquetación en rejilla pensado para distribuir el contenido en filas y/o columnas. Esto nos permite trabajar sobre dos ejes, el horizontal (x) y el vertical (y).
 También permite dividir una página o elemento en áreas o regiones.
 El grid se define en la propiedad `display` con el valor `display: grid` o `display: inline-grid`. Una vez definido, todos los hijos directos se convertirán en elementos de la cuadrícula.
 
@@ -35,8 +35,8 @@ El grid se define en la propiedad `display` con el valor `display: grid` o `disp
 #### Estructura del grid
 
 > Antes de ver las siguientes propiedades tenemos que tener claros dos conceptos claves, la `cuadrícula implícita` y la `cuadrícula explícita`.
-> Cuando hablamos de **cuadrícula explícita** nos referimos a las filas y columnas que definimos mediante algunas propiedades que veremos a continuación.
-> La **cuadrícula implícita** hace referencia a las filas y columnas no definidas pero que grid las creará para el contenido si fuera necesario. Este comportamiento también podremos controlarlo como veremos más adelante.
+> Cuando hablamos de **cuadrícula explícita** nos referimos a las filas y columnas que definimos mediante alguna de las propiedades que veremos a continuación.
+> La **cuadrícula implícita** hace referencia a las filas y columnas no definidas pero que grid puede crear si fuera necesario para el contenido. Este comportamiento también podremos controlarlo como veremos más adelante.
 
 - **grid-template-columns** define el ancho de una o varias columnas de manera individual pudiendo asignar un nombre a cada una de las líneas (verticales) `grid-template-columns: [primera-linea] 50px [segunda-linea] 20% 1fr auto [ultima-linea];`
 - **grid-template-rows** define el alto de una o varias filas de manera individual pudiendo asignar un nombre a cada una de las líneas (horizontales) `grid-template-rows: 100px 100px 200px;`
@@ -55,21 +55,22 @@ El grid se define en la propiedad `display` con el valor `display: grid` o `disp
 
   ```css
   grid-template:
-  	"a a a" 40px
-  	"b c c" 40px
-  	"b c c" 40px / 1fr 1fr 1fr;
+  	[f1l1] "a a a" 40px [f1l2] /* primera fila */
+  	"b c c" 40px /*segunda fila */
+  	"b c c" 40px /* tercera fila */
+  	/ 1fr 1fr 1fr; /* estructura de columna */
   ```
 
 - **grid-auto-columns** define el ancho de todas las posibles columnas no definidas en el Grid Container `grid-auto-columns: 200px;` `grid-auto-columns: auto;`
 - **grid-auto-rows** define el alto de todas las posibles filas no definidas en el Grid Container `grid-auto-rows: 200px;` `grid-auto-rows: auto;`
 - **grid-auto-flow** Define la dirección en donde se ubicaran los elemento que no estén definidos como filas y columnas dentro del Grid Container.
 
-  > Ejemplo: Tenemos definido un grid container de 2\*2 donde caben 4 elementos pero es posible que nuestra aplicación genere algún elemento más.
+  > Ejemplo: Tenemos definido un grid container de 3x3 ocupado con 5 elementos pero es posible que nuestra aplicación genere algún elemento más.
   > Con la propiedad **grid-auto-flow: column** y **grid-auto-columns: 100px** establecemos que todo elemento que venga de más se establezca en nuevas columnas con un ancho de 100px.
 
 #### Posicionar elementos repecto a las líneas
 
-- **grid-row-start || grid-row-end || grid-column-start || grid-column-end** se pueden usar de manera individual o conjunta para definir el inicio y fin de la fila y columna.
+- **grid-row-start || grid-row-end || grid-column-start || grid-column-end** se pueden usar de manera individual o conjunta para definir el inicio y fin del elemento en fila y columna.
   Si las columnas y filas se han definido nombradas (grid-template-columns) podemos utilizar el nombre en vez del número `grid-row-start: primera-linea;`
   Por ejemplo, si queremos que un elemento ocupe la fila 2 y las columnas 2 y 3 lo indicaríamos así:
 
@@ -84,7 +85,7 @@ El grid se define en la propiedad `display` con el valor `display: grid` o `disp
 
   ![posicionando elementos](./assets/grid-element-position1.png)
 
-  **grid-row || grid-column** son los shorthand para poder definir principio y fin en una sóla propiedad:
+  **grid-row || grid-column** son los shorthand para poder definir principio y fin en una sola propiedad:
 
   ```css
   .element {
@@ -96,13 +97,14 @@ El grid se define en la propiedad `display` con el valor `display: grid` o `disp
   **Otros valores** que podemos utilizar:
 
   - **-1** como valor de fin de fila o columna indica que ocupe todo el espacio de fila o columna.
-  - **span** (se extiende) el elemento ocupará el número de filas o columnas indicado, sólo se puede usar con `grid-row` y `grid-column`
+  - **span** (se extiende) el elemento ocupará el número de filas o columnas indicado
 
     ```css
-    grid-column: 1 / span 4;
+    grid-column: 1 / span 4; /* se extiende 4 a partir de la primera */
     ```
 
   - **auto** define el inicio o final de una fila o columna de manera automática
+
     ```css
     grid-row: 1 / auto;
     ```
