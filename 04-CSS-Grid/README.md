@@ -109,15 +109,36 @@ El grid se define en la propiedad `display` con el valor `display: grid` o `disp
     grid-row: 1 / auto;
     ```
 
+#### Superposición de elementos
+
+Los elementos de un grid pueden ocupar una misma celda superponiéndose entre ellos.
+
+Podemos controlar este orden de superposición con la propiedad z-index en cada elemento
+
+```css
+.itemA  {
+	grid-column: 1  /  3;
+	grid-row: 1  /  2;
+	z-index: -100;
+}
+.itemB  {
+	grid-column: 2  /  3;
+	grid-row: 1  /  3;
+	opacity: 0.5;
+}
+```
+
+![ejemplo superposición](./assets/superponer-elementos.png)
+
 #### Espaciado entre elementos en el grid
 
 - **row-gap** || **column-gap** || **gap** definen el gutter o espaciado entre columnas y filas.
 
-  - **row-gap** establece la separación entre filas `row-gap: 10px;`
-  - **column-gap** establece la separación entre columnas `column-gap: 10px;`
-  - **gap** es la propiedad abreviada o shorthand. Establece la separación entre filas y columnas, si sólo se proporciona un valor este se aplica para ambas `gap: 10px 20px;`
+- **row-gap** establece la separación entre filas `row-gap: 10px;`
+- **column-gap** establece la separación entre columnas `column-gap: 10px;`
+- **gap** es la propiedad abreviada o shorthand. Establece la separación entre filas y columnas, si sólo se proporciona un valor este se aplica para ambas `gap: 10px 20px;`
 
-  ![Ejemplo gap](./assets/grid-gap.png)
+![Ejemplo gap](./assets/grid-gap.png)
 
 ### Funciones
 
@@ -127,7 +148,7 @@ El grid se define en la propiedad `display` con el valor `display: grid` o `disp
 ### Valores
 
 - **min-content** define el tamaño más pequeño de una caja sin que el contenido llegue a desbordar.
-- **max-content** define el tamaño máximo de una caja en función de su contenido, es decir minimiza el espacio vacío y evita el desbordamiento. Si tenemos un contenedor padre con un ancho infinito y establecemos este valor a un elemento hijo cuyo contenido es un texto, el ancho máximo que ocupará será el que marque dicho texto.
+- **max-content** define el tamaño máximo de una caja en función de su contenido, es decir minimiza el espacio vacío y evita el desbordamiento. Si tenemos un contenedor padre con un ancho infinito y establecemos este valor a un elemento hijo cuyo contenido es un texto, el ancho máximo que ocupará será el que ocupe dicho texto.
 - **fr** Grid introduce esta nueva unidad de medida. Lo que representa es una fracción del espacio disponible en el grid container. Al utilizarla podemos crear elementos que se expanden y encogen de acuerdo al espacio disponible.
 
 > Podemos utilizar estos valores en las funciones anteriores para definir tamaños en filas y columnas.
@@ -138,11 +159,14 @@ El grid se define en la propiedad `display` con el valor `display: grid` o `disp
 
 Permiten alinear los elementos de manera horizontal (justify-content) y vertical (align-content) dentro del grid container.
 
-- **flex-start** posiciona la cuadrícula al inicio de su espacio vertical y/o horizontal.
-  ```css
-  justify-content: flex-start;
-  ```
-  ![ejemplo flex-start](./assets/flex-start.png)
+- **flex-start** posiciona la cuadrícula al inicio de su espacio vertical y/o horizontal (valor por defecto).
+
+```css
+justify-content: flex-start;
+align-content: flex-start;
+```
+
+![ejemplo flex-start](./assets/flex-start.png)
 
 ---
 
@@ -230,7 +254,7 @@ Permiten alinear los elementos contenidos en los **grid items** de manera simét
 
 #### justify-selft || align-selft
 
-Permite las diferentes alineaciones anteriormente vistas aplicando la propiedad a cada grid item de manera individual. justify-self para horizontal y align-self para vertical.
+Admiten los mismos valores que **justify-items** y **align-items**. La diferencia es que esta propiedad se utiliza de manera individual en los estilos de cada elemento y no desde el contenedor como en las anteriores (justify-self para horizontal y align-self para vertical).
 
 ```css
 justify-items: stretch;
