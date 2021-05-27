@@ -100,7 +100,7 @@ El grid se define en la propiedad `display` con el valor `display: grid` o `disp
   - **span** (se extiende) el elemento ocupará el número de filas o columnas indicado
 
     ```css
-    grid-column: 1 / span 4; /* se extiende 4 a partir de la primera */
+    grid-column: 1 / span 4; /* se extiende 4 líneas más después de la primera */
     ```
 
   - **auto** define el inicio o final de una fila o columna de manera automática
