@@ -2,48 +2,43 @@ body {
 	background-color: rgb(22, 21, 17);
 }
 .grid {
-	display: grid;
-	grid-template-rows: 150px 150px 150px;
-	grid-template-columns: 150px 150px 150px;
-	grid-auto-columns: 100px;
-	grid-auto-flow: column;
-	gap: 20px;
 	margin: 0 auto;
 	width: 800px;
 	height: 650px;
 	border: 10px solid yellowgreen;
-	justify-content: center;
-	align-content: center;
+	display: grid;
+	grid-template-columns: repeat(3, 150px);
+	grid-template-rows: repeat(3, 150px);
+	grid-template-areas:
+		"a b c"
+		"a b c"
+		"a d e";
+	gap: 20px;
+	grid-auto-columns: 100px;
+	grid-auto-flow: column;
 }
 
 .a {
 	background-color: teal;
-
-	grid-row-start: 1;
-	grid-row-end: 4;
-	/* grid-row: span 3; */
 	grid-column-start: 1;
 	grid-column-end: 2;
-	/* z-index: -100; */
-	/* grid-row-end: span 6; */
+	grid-row-start: 1;
+	grid-row-end: 4;
 }
 .b {
-	/* grid-area: b; */
+	background-color: thistle;
 	grid-column: 2 / 3;
 	grid-row: 1 / 3;
-	background-color: thistle;
-	/* opacity: 0.5; */
 }
 .c {
-	/* grid-area: c; */
 	background-color: tomato;
+	grid-column: 3 / 4;
+	grid-row: 1 / span 2;
 }
 .d {
-	/* grid-area: d; */
 	background-color: tan;
 }
 .e {
-	/* grid-area: e; */
 	background-color: steelblue;
 }
 .cell {
@@ -53,14 +48,6 @@ body {
 	border: 1px solid yellowgreen;
 }
 
-/* .cell2 {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-color: red;
-	color: white;
-	font-size: 4rem;
-	font-weight: bold;
-	font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-		"Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-} */
+.newElements {
+	border: 1px solid red;
+}
