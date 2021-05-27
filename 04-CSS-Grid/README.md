@@ -215,7 +215,7 @@ align-content: flex-start;
 
 #### justify-items || align-items
 
-Permiten alinear los elementos contenidos en los **grid items** de manera simétrica en su espacio horizontal (justify-items) y en el vertical (align-items).
+Permiten alinear los elementos contenidos en los **grid items** (celdas o áreas) de manera simétrica en su espacio horizontal (justify-items) y en el vertical (align-items).
 
 - **flex-start** posiciona los elementos al inicio de su espacio vertical y/o horizontal.
   ```css
