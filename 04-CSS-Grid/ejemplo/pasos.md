@@ -256,57 +256,161 @@ Ahora probaremos estas funciones y valores para definir el tamaño de filas y co
 }
 ```
 
-## 8. justify-content || align-content
+## 8. grid-area
 
-Vamos a alinear el conjunto
+Anteriormente hemos definido unas áreas en nuestro **grid-container** pero aun no las hemos utilizado.
 
-#### Creamos la primera estructura con un grid area
+Hemos visto cómo posicionar los elementos haciendo referencia a unas determinadas líneas. Ahora vamos a simplicar esto utilizando áreas.
 
-```css
-body {
-	background-color: rgb(22, 21, 17);
-}
+```diff
 .grid {
-	display: grid;
-	grid-template-rows: 150px 150px 150px;
-	grid-template-columns: 150px 150px 150px;
-	gap: 20px;
-	justify-content: center;
-	align-content: center;
 	margin: 0 auto;
 	width: 800px;
 	height: 650px;
 	border: 10px solid yellowgreen;
+	display: grid;
+	grid-template-columns: repeat(3, 150px);
+	grid-template-rows: repeat(3, 150px);
 	grid-template-areas:
 		"a b c"
 		"a b c"
 		"a d e";
+	gap: 20px;
+	grid-auto-columns: 100px;
+	grid-auto-flow: column;
+	justify-content: space-evenly;
+	align-content: space-evenly;
+-	justify-items: stretch;
+-	align-items: flex-end;
 }
+```
 
+```diff
 .a {
-	grid-area: a;
 	background-color: teal;
+-	grid-column-start: 1;
+-	grid-column-end: 2;
+-	grid-row-start: 1;
+-	grid-row-end: 4;
++	grid-area: a;
 }
 .b {
-	grid-area: b;
 	background-color: thistle;
+-	grid-column: 2 / 3;
+-	grid-row: 1 / 3;
++	grid-area: b;
 }
 .c {
-	grid-area: c;
 	background-color: tomato;
+-	grid-column: 3 / 4;
+-	grid-row: 1 / span 2;
++	grid-area: c;
 }
 .d {
-	grid-area: d;
 	background-color: tan;
++	grid-area: d;
 }
 .e {
-	grid-area: e;
 	background-color: steelblue;
++	grid-area: e;
 }
-.cell {
-	border: 1px solid white;
+```
+
+## 9. justify-content || align-content
+
+Vamos a alinear el conjunto de filas y columnas con los diferentes valores que admiten estas propiedades:
+
+- **flex-start**
+- **flex-end**
+- **center**
+- **space-around**
+- **space-evenly**
+- **space-between**
+
+```diff
+.grid {
+	margin: 0 auto;
+	width: 80%;
+	height: 650px;
+	border: 10px solid yellowgreen;
+	display: grid;
+	grid-template-columns: repeat(3, 150px);
+	grid-template-rows: repeat(3, 150px);
+	grid-template-areas:
+		"a b c"
+		"a b c"
+		"a d e";
+	gap: 20px;
++	justifay-content: flex-start;
++	align-content: flex-start;
 }
-.cell span {
-	border: 1px solid yellowgreen;
+```
+
+## 10. justify-items || align-items
+
+Ahora queremos alinear el contenido de los grid items o áreas respecto a ellos. Estas propiedades admiten los siguientes valores:
+
+- **flex-start**
+- **flex-end**
+- **center**
+- **stretch**
+
+```diff
+.grid {
+	margin: 0 auto;
+	width: 80%;
+	height: 650px;
+	border: 10px solid yellowgreen;
+	display: grid;
+	grid-template-columns: repeat(3, 150px);
+	grid-template-rows: repeat(3, 150px);
+	grid-template-areas:
+		"a b c"
+		"a b c"
+		"a d e";
+	gap: 20px;
+	justifay-content: flex-start;
+	align-content: flex-start;
++	justify-items: flex-start;
++	align-items: flex-start;
+}
+```
+
+Y un ejemplo más combinando el valor stretch
+
+```diff
+.grid {
+	margin: 0 auto;
+	width: 80%;
+	height: 650px;
+	border: 10px solid yellowgreen;
+	display: grid;
+	grid-template-columns: repeat(3, 150px);
+	grid-template-rows: repeat(3, 150px);
+	grid-template-areas:
+		"a b c"
+		"a b c"
+		"a d e";
+	gap: 20px;
+	justifay-content: flex-start;
+	align-content: flex-start;
+-	justify-items: flex-start;
++	justify-items: stretch;
++	align-items: flex-start;
+}
+```
+
+## 11. justify-self || align-self
+
+Similar a lo anterior solo que esta propiedad se aplica desde el elemento y no desde el grid container.
+
+```diff
+.a {
+	background-color: teal;
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 1;
+	grid-row-end: 4;
++	align-self: flex-start;
 }
 ```
