@@ -1,0 +1,22 @@
+/* header styles */
+.header {
+	background-color: whitesmoke;
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 20px;
+}
+
+.header__menu {
+	list-style: none;
+	display: flex;
+	align-items: center;
+	column-gap: 40px;
+}
+
+.header__menu__item {
+	cursor: pointer;
+}
+
+.header__menu__item:hover {
+	color: lightslategray;
+}
