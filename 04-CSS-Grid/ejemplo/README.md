@@ -265,7 +265,8 @@ Hemos visto cómo posicionar los elementos haciendo referencia a unas determinad
 ```diff
 .grid {
 	margin: 0 auto;
-	width: 800px;
+-	width: 80%;
++	width: 800px;
 	height: 650px;
 	border: 10px solid yellowgreen;
 	display: grid;
@@ -276,12 +277,6 @@ Hemos visto cómo posicionar los elementos haciendo referencia a unas determinad
 		"a b c"
 		"a d e";
 	gap: 20px;
-	grid-auto-columns: 100px;
-	grid-auto-flow: column;
-	justify-content: space-evenly;
-	align-content: space-evenly;
--	justify-items: stretch;
--	align-items: flex-end;
 }
 ```
 
@@ -330,7 +325,7 @@ Vamos a alinear el conjunto de filas y columnas con los diferentes valores que a
 ```diff
 .grid {
 	margin: 0 auto;
-	width: 80%;
+	width: 800px;
 	height: 650px;
 	border: 10px solid yellowgreen;
 	display: grid;
@@ -358,7 +353,7 @@ Ahora queremos alinear el contenido de los grid items o áreas respecto a ellos.
 ```diff
 .grid {
 	margin: 0 auto;
-	width: 80%;
+	width: 800px;
 	height: 650px;
 	border: 10px solid yellowgreen;
 	display: grid;
