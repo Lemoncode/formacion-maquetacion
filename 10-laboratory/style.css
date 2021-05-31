@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost&display=swap");
+
+body {
+	background-color: #141414;
+	color: white;
+	font-family: Jost, times, arial;
+	font-size: 1rem;
+	margin: 0;
+	z-index: -1000;
+}
+
+header {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	position: fixed;
+	width: 100%;
+	min-width: 200px;
+	background-color: #141414;
+	top: 0;
+}
+
+.header__logo {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	box-sizing: border-box;
+	width: 50%;
+	padding: 1% 2%;
+}
+
+.header__logo img {
+	max-width: 100px;
+}
+
+.header__platform-title {
+	padding: 2%;
+	font-size: 1.1rem;
+}
+.header__buttons {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	width: 50%;
+}
+
+.header__buttons div {
+	width: 80px;
+	text-align: center;
+	margin-right: 3%;
+	cursor: pointer;
+}
+
+.header__buttons :hover {
+	color: black;
+	background-color: white;
+	border-radius: 3px;
+}
+
+main {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: flex-end;
+	padding: 2%;
+	z-index: -1;
+	margin-top: 100px;
+}
+main > * {
+	display: flex;
+	flex-flow: row nowrap;
+	box-sizing: border-box;
+}
+main > div {
+	margin: 2% 0 1%;
+	font-size: 1.1rem;
+}
+#top-five {
+	padding: 0 0.6%;
+}
+
+#top-five::after {
+	content: "5";
+	font-weight: bold;
+}
+.top-section {
+	flex-flow: row-reverse;
+}
+.top-section__item {
+	display: flex;
+	flex-flow: row wrap;
+	flex: 1 0 20%;
+	border: 2px solid #141414;
+	box-sizing: border-box;
+}
+
+.top-section__item img {
+	width: 100%;
+}
+.section {
+	display: flex;
+	flex-flow: row wrap;
+}
+
+.section:nth-last-child(-n + 2) {
+	flex: 1 0 50%;
+}
+
+.section img {
+	min-width: 250px;
+}
+
+.item {
+	flex: 1 0 16.666%;
+	cursor: pointer;
+	border: 2px solid #141414;
+	box-sizing: border-box;
+}
+.item img {
+	width: 100%;
+}
+.item img:hover {
+	transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	overflow: visible;
+}
+
+@media screen and (max-width: 1280px) {
+	.header__platform-title {
+		display: none;
+	}
+	main {
+		max-width: 1280px;
+		margin: 100px auto;
+	}
+	#top-five ::after {
+		content: "3";
+	}
+	.top-section {
+		flex-wrap: wrap-reverse;
+	}
+
+	.top-section__item {
+		flex: 1 0 33.33%;
+	}
+	.top-section__item img {
+		min-width: 225px;
+	}
+
+	.top-section__item :nth-child(-n + 2) {
+		display: none;
+	}
+}
+@media screen and (max-width: 375px) {
+	main > div {
+		font-size: 1.5rem;
+	}
+	#top-five {
+		padding: 0 1.5%;
+	}
+}
+footer {
+	font-size: 0.7rem;
+	text-align: right;
+	padding: 3%;
+}
