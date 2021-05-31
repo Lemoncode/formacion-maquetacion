@@ -1,0 +1,39 @@
+.container {
+	border: 1px solid gray;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 20px;
+	padding: 20px;
+}
+
+/* styles svg html */
+.social-media {
+	list-style: none;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	padding: 2% 0;
+	column-gap: 20px;
+	width: 100%;
+}
+.social-media__icon {
+	cursor: pointer;
+}
+
+.social-media__icon__facebook {
+	fill: #3a5795;
+}
+.social-media__icon__instagram {
+	fill: #2a5b83;
+}
+.social-media__icon__twitter {
+	fill: #5ea9dd;
+}
+.social-media__icon__whatsapp {
+	fill: #00bb2d;
+}
+.social-media__icon__youtube {
+	fill: #cc181e;
+}

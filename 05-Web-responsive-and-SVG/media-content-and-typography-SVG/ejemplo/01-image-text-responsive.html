@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="01-image-text-responsive.styles.css" />
+		<script type="module" src="avatar.js"></script>
+		<title>Lemoncode - Responsive</title>
+	</head>
+	<body>
+		<div class="grid-container">
+			<header class="header">
+				<div class="header__avatar">
+					<avatar-component />
+				</div>
+				<ul class="header__menu">
+					<li class="header__menu__item">Home</li>
+					<li class="header__menu__item">About</li>
+				</ul>
+			</header>
+
+			<main class="main">
+				<section class="main__section">
+					<h3>Imagen</h3>
+
+					<img
+						class="main__section__img"
+						src="assets/logo.png"
+						alt="wallpaper"
+					/>
+
+					<span class="main__section__txt"
+						>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora
+						unde corrupti optio quisquam corporis nihil voluptatibus hic
+						laboriosam quas nobis nesciunt amet facilis id nam iste, error
+						magnam numquam impedit?</span
+					>
+				</section>
+				<section class="main__section">
+					<h3>Vídeo</h3>
+					<span class="main__section__txt"
+						>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora
+						unde corrupti optio quisquam corporis nihil voluptatibus hic
+						laboriosam quas nobis nesciunt amet facilis id nam iste, error
+						magnam numquam impedit?</span
+					>
+					<video
+						controls
+						src="assets/01-Props-Ts-React-1.m4v"
+						class="main__section__video"
+						poster="assets/lemoncode-wallpaper-led.png"
+					>
+						Tu navegador no admite el elemento <code>video</code>.
+					</video>
+				</section>
+			</main>
+
+			<footer class="footer">
+				<img class="footer__img" src="assets/logo.png" />
+				<span class="footer__copy">&copy; by Lemoncode 2021</span>
+			</footer>
+		</div>
+	</body>
+</html>
