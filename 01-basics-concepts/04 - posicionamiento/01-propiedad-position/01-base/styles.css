@@ -1,0 +1,47 @@
+.container {
+  width: 400px;
+  height: 400px;
+  background-color: grey;
+  overflow: auto;
+  margin-top: 50px;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+}
+
+#box-a {
+  background-color: indianred;
+}
+
+#box-b {
+  background-color: goldenrod;
+}
+
+/* Como pondriamos el B en la esquina superior derecha del cuadrado gris 
+
+.container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  background-color: grey;
+  overflow: auto;
+  margin-top: 50px;
+}
+
+#box-b {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: goldenrod;
+} /*
+
+/* Ejemplo de Z-index
+/*
+#box-b {
+  position: absolute;
+  background-color: goldenrod;
+  z-index: -1;
+}
+*/
