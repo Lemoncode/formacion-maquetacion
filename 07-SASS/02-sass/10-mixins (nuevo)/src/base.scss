@@ -1,0 +1,11 @@
+$primary-color: darkorange;
+$secondary-color: skyblue;
+$text-color: darkblue;
+$font-base-size: 1.3em;
+$link-font-size: 1.5em;
+
+$grid-item-base-color: darkblue;
+
+@mixin rounded-corners-all($size: 0.5rem) {
+  border-radius: $size;
+}

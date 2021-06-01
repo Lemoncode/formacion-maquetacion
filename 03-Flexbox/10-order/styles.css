@@ -1,0 +1,52 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#flex-container {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.box {
+  padding: 25px;
+  flex: 1;
+}
+
+#box1 {
+  background-color: darkolivegreen;
+}
+
+#box2 {
+  background-color: darkorange;
+}
+
+#box3 {
+  background-color: darkmagenta;
+}
+
+/* con el campo order le damos peso al elemento
+
+#box1 {
+  order: 2,
+  background-color: darkorange;
+}
+
+El elemento pesa mas y se va al final 
+*/
+
+/* Se puede jugar con pesos negativos
+
+#box3 {
+  order: -1,
+  background-color: darkorange;
+}
+
+El elemento pesa menos y se pone el primero 
+*/
+
+/*¿Lo veis util? Ejemplo del caso de la vista en movil y reordenar publicidad */
+
+/* ¿Que pasa si ponemos un row-reverse? ¿Apuestas?
+  Los primeros son los que pesan mas...
+*/

@@ -1,0 +1,17 @@
+@import "base";
+
+.box-style-1,
+.box-style-2 {
+  width: 25%;
+  height: 10rem;
+  margin: 1rem;
+  background-color: darkorange;
+}
+
+.box-style-1 {
+  @include rounded-corners-all;
+}
+
+.box-style-2 {
+  @include rounded-corners-all(2rem);
+}

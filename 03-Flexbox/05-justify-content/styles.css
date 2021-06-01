@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#flex-container {
+  display: flex;
+  border: 4px solid black;
+  flex-flow: row wrap;
+  /* justify: se refiere al propio eje */
+  /* align : se refiere al otro eje */
+}
+
+.box {
+  padding: 15px;
+  border: 1px solid black;
+  margin: 5px;
+}
+
+/* por defecto aparece el justify-content a flex-start
+#flex-container {
+  justify-content: flex-start;
+  ...
+/*}
+*/
+
+/* El flex-end respeta el orden pero lo pone al final del contenedor
+#flex-container {
+  justify-content: flex-end;
+  ...
+/*}
+*/
+
+/* El center lo centra
+#flex-container {
+  justify-content: center;
+  ...
+/*}
+*/
+
+/* space-between space-around y space-evenly la diferencia es la distancia.
+#flex-container {
+  justify-content: space-around;
+  ...
+/*}
+
+JUGAR con cambiar el tamaño y ver como se distribuye en diferentes lineas
+*/
+
+/* Cambiamos la orientacion y el tamaño
+#flex-container {
+  ...
+  flex-flow: column wrap;
+  height: 100vh;
+}
+
+JUGAR con las combinaciones de justify-content con todas
+*/
+
+/* Cambiamos la orientacion y el tamaño
+#flex-container {
+  ...
+  flex-flow: column wrap;
+  height: 100vh;
+}
+
+JUGAR con las combinaciones de justify-content con todas
+*/

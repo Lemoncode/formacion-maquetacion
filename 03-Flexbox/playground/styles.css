@@ -1,0 +1,30 @@
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+#flex-container {
+  display: flex;
+  border: 1px solid black;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.box {
+  background-color: cadetblue;
+  padding: 25px;
+}
+
+#box1 {
+  order: 1;
+  background-color: darkolivegreen;
+}
+
+#box2 {
+  order: 0;
+  background-color: darkorange;
+}
+
+#box3 {
+  background-color: darkmagenta;
+}

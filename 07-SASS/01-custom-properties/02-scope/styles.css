@@ -1,0 +1,11 @@
+header {
+  --primary-color: darkorange;
+  background-color: var(--primary-color);
+  padding: 25px;
+}
+
+main {
+  color: var(--primary-color);
+  font-size: 125%;
+  margin: 25px;
+}

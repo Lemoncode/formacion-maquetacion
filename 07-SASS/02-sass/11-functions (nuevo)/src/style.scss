@@ -1,0 +1,28 @@
+@import "base";
+
+@function filter-image($amount) {
+  @return brightness($amount * 2) sepia($amount);
+}
+
+.images-container {
+  display: grid;
+  grid-template-columns: repeat(3, 200px);
+  grid-template-rows: repeat(3, 200px);
+
+  img {
+    width: 200px;
+    height: 200px;
+  }
+
+  img:hover {
+    filter: filter-image(0.6);
+  }
+
+  $i: 1;
+  @while $i <= 9 {
+    .item-#{$i}:hover {
+      filter: filter-image(0.6 * $i);
+    }
+    $i: $i + 1;
+  }
+}

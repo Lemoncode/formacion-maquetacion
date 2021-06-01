@@ -1,0 +1,48 @@
+html {
+  --primary-color: darkorange;
+  --secondary-color: 15px;
+}
+
+header {
+  background-color: var(--primary-color);
+  padding: 25px;
+}
+
+main {
+  color: var(--secondary-color, red);
+  font-size: 125%;
+  margin: 25px;
+}
+
+.card {
+  --primary-color: green;
+  border: 2px solid var(--primary-color);
+  padding: 15px;
+  border-radius: 8px;
+}
+
+/* Steps: */
+
+/* [1] Override a nivel de main
+main {
+  --primary-color: green;
+  color: var(--primary-color);
+  font-size: 125%;
+  margin: 25px;
+}
+*/
+
+/* [1] Override a nivel de card: el color sigue heredando el darkorange
+main {
+  color: var(--primary-color);
+  font-size: 125%;
+  margin: 25px;
+}
+
+.card {
+  --primary-color: green;
+  border: 2px solid var(--primary-color);
+  padding: 15px;
+  border-radius: 8px;
+}
+*/

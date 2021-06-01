@@ -1,0 +1,97 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#flex-container {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid black;
+}
+
+#flex-container div {
+  padding: 5px;
+}
+
+#flex-container div:nth-child(1) {
+  background-color: darkmagenta;
+}
+
+#flex-container div:nth-child(2) {
+  background-color: darkolivegreen;
+}
+
+#flex-container div:nth-child(3) {
+  background-color: darkred;
+}
+
+/* Por defecto es flex-direction: row */
+
+/* Cambiar a display para ocupar lo que ocupe sus hijos 
+#flex-container {
+  display: inline-flex;
+  ...
+}
+*/
+
+/* Ahora cambiamos el flex direcction a row reverse ¿Que pasará?
+#flex-container {
+  ...
+  flex-direction: row-reverse;
+}
+*/
+
+/* Si lo ponemos como flex ocupan todo el ancho
+#flex-container {
+  display: flex;
+  ...
+}
+*/
+
+/* Lo ponemos como column 
+#flex-container {
+  ...
+  flex-direction: column;
+  ...
+}
+*/
+
+/* Al ponerlo como column-reverse no ocupa todo el alto
+#flex-container {
+  ...
+  flex-direction: column-reverse;
+  ...
+}
+*/
+
+/* Aumentamos el alto a 100vh
+#flex-container {
+  ...
+  height: 100vh
+  ...
+}
+*/
+
+/* Vamos a forzar el wrap: Volvemos a flex-direction a row y ponemos tamaño a 300
+#flex-container {
+  ...
+  flex-direction: row;  
+  flex-wrap: wrap;
+}
+
+#flex-container div {
+  width: 300px;
+}
+*/
+
+/* Cambiamos a wrap-reverse para ver como se crean las filas arriba
+#flex-container {
+  ...
+  flex-wrap: wrap-reverse;
+}
+
+#flex-container div {
+  width: 300px;
+  ...
+}
+*/

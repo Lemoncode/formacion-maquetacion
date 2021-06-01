@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#flex-container {
+  display: flex;
+  border: 4px solid black;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 100vh;
+}
+
+.box {
+  padding: 15px;
+  border: 1px solid black;
+  margin: 5px;
+  width: 200px;
+}
+
+#box3 {
+}
+
+#box2 {
+}
+
+/* Por defecto nuestros elementos tienden a ocupar todo el alto 
+por que el align-content es stretch 
+{
+  align-content: stretch;
+}
+
+/* Vamos a organizar nuestros elementos en el centro
+#flex-container {
+  align-content: center;
+}
+*/
+
+/* Si hacemos mas grande la caja tres los item 1 y 2 crecen tambien, ¿Por que?
+#box3 {
+  padding: 40px;
+}
+*/
+
+/* Para que no afecte a los items de la misma fila utilizamos el align-items
+#box3 {
+  align-items: strecth; // por defecto
+}
+
+//Jugamos con los valores de align items
+*/
+
+/* Vamos a probar align-items: baseline para ello aumentamos el tamaño de
+la caja
+#flex-container {
+  ...
+  align-items: baseline;
+}
+
+#box3 {
+  padding: 40px;
+  padding-bottom: 70px;
+}
+*/
+
+/* Por ultimo vamos a romper la alineacion en la fila a un solo elemento
+#box2 {
+  align-self: flex-start;
+}
+*/
+
+/* Si vamos bien de tiempo hacemos lo mismo pero con flex-direction column 
+OJO hay que tener width diferentes,
+*/

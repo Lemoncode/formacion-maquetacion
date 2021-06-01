@@ -1,0 +1,39 @@
+.container {
+  border: 1px solid black;
+  padding: 15px;
+  overflow: hidden;
+}
+
+/* Le metemos el float y hacemos flotante la imagen, pero se sale del cuadrado
+.container img {
+  float: left;
+  width: 245px;
+  margin: 5px;
+}
+*/
+
+/* Explicacion del overflow
+#box {
+  border: 1px solid red;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+}
+
+#box {
+  border: 1px solid red;
+  width: 300px;
+  height: 300px;
+  overflow: scroll;
+}
+
+ELMINAR EL BOX
+*/
+
+/* Truco: le metemos la propiedad overflow hidden para que se ajuste
+.container {
+  border: 1px solid black;
+  padding: 15px;
+  overflow: hidden;
+}
+*/

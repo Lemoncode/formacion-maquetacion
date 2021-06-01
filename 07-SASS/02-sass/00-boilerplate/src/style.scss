@@ -1,0 +1,13 @@
+div.container {
+  padding: 15px;
+  border: 1px solid black;
+}
+
+div.container p {
+  font-size: 125%;
+}
+
+div.container > p {
+  font-style: italic;
+  font-weight: bold;
+}

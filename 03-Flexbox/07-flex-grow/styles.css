@@ -1,0 +1,88 @@
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+#flex-container {
+  display: flex;
+  border: 1px solid black;
+  flex-direction: row;
+}
+
+.box {
+  background-color: cadetblue;
+  padding: 25px;
+}
+
+#box1 {
+  background-color: darkolivegreen;
+}
+
+#box2 {
+  background-color: darkorange;
+}
+
+#box3 {
+  background-color: darkmagenta;
+}
+
+/* Punto de partida: las cajas ocupa lo que neceista. Vamos a cambiar de comportamiento
+de la caja 2
+#box2 {
+...
+  flex-grow: 1;
+}
+*/
+
+/* Estamos jugando con la capacidad de crecer de los elementos.
+ Ahora vamos a darle el mismo comportamiento a box 1
+ #box1 {
+...
+  flex-grow: 1;
+}
+*/
+
+/* Vamos a darle a box2 la doble capacidad de crecer
+ #box1 {
+...
+  flex-grow: 2;
+}
+*/
+
+/* Con flex basic podemos definir un estado inicial que tiene que cumplirse
+independientente de la capacidad de crecer
+ #box1 {
+...
+  flex-basis: 180px;
+}
+*/
+
+/* Con el flex-shring es igual pero indicando la capacidad para encoger 
+.box {
+  background-color: cadetblue;
+  padding: 25px;
+  flex-grow: 1;
+  flex-basis: 300px;
+}
+
+#box1 {
+  background-color: darkolivegreen;
+  flex-shrink: 1;
+}
+
+#box2 {
+  background-color: darkorange;
+  flex-shrink: 5;
+}
+
+#box3 {
+  background-color: darkmagenta;
+  flex-shrink: 1;
+}
+*/
+
+/* Se suele trabajar con flex */
+
+/* Si vamos bien de tiempo hacer el ejemplo pero en columna 
+Ojo para que funcione poner height: 100vh
+*/

@@ -1,0 +1,33 @@
+[href] {
+  font-size: 125%;
+  padding: 8px;
+}
+
+[href*="lemoncode"] {
+  background-color: green;
+  color: white;
+}
+
+[title="Email"] {
+  text-decoration: none;
+}
+
+[href$=".pdf"] {
+  background-color: indianred;
+  color: white;
+}
+
+[href$=".txt"] {
+  background-color: darkblue;
+  color: white;
+}
+
+[lang|="es"] {
+  background-color: blueviolet;
+  color: white;
+}
+
+[list~="item2"] {
+  background-color: green;
+  color: white;
+}

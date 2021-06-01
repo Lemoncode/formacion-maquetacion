@@ -1,0 +1,36 @@
+$primary-color: darkorange;
+$secondary-color: skyblue;
+$text-color: darkblue;
+$font-base-size: 1.3em;
+$link-font-size: 1.5em;
+$breakpoint: 300px;
+$border: 1px solid black;
+
+p {
+  .container-a & {
+    font-size: $font-base-size;
+    background-color: $primary-color;
+    color: $text-color;
+    border: $border;
+  }
+  .container-b & {
+    background-color: $secondary-color;
+    color: $text-color;
+  }
+}
+
+a {
+  font: {
+    size: $link-font-size;
+    weight: bold;
+  }
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+@media screen and (max-width: $breakpoint) {
+  p {
+    font-size: 30px;
+  }
+}

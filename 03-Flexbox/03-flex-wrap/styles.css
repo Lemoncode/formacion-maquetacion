@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#flex-container {
+  display: flex;
+  flex-direction: row;
+  border: 4px solid black;
+  flex-wrap: nowrap;
+}
+
+#flex-container div {
+  border: 1px solid black;
+  margin: 5px;
+  padding: 5px;
+}
+
+/* Short hand de flex direction y flex wrap
+#flex-container {
+  flex-flow: row wrap;
+}
+*/
+
+/* Si ponemos un nowrap no se va a partir la linea se adaptará y cuando no puede decrecer mas sale scroll
+#flex-container {
+  flex-flow: row nowrap;
+}
+*/

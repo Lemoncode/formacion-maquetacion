@@ -1,0 +1,13 @@
+@import "base";
+
+.button {
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  display: inline-block;
+}
+
+.primary-button {
+  @extend .button;
+  background-color: $primary-color;
+}

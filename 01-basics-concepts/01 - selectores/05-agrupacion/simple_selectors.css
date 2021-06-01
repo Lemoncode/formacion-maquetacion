@@ -1,0 +1,19 @@
+/* div > p {
+  color: blue;
+  font-size: 150%;
+} */
+
+/*section + p {
+  color: blue;
+  font-size: 150%;
+} */
+
+/*section ~ p {
+  color: blue;
+  font-size: 150%;
+}*/
+
+/*section ~ p.title#id3 {
+  color: blue;
+  font-size: 150%;
+}*/

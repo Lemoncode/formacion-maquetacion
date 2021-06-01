@@ -1,0 +1,18 @@
+p {
+  .container-a & {
+    color: red;
+  }
+  .container-b & {
+    color: blue;
+  }
+}
+
+a {
+  font: {
+    size: 150%;
+    weight: bold;
+  }
+  &:hover {
+    color: darkorange;
+  }
+}
