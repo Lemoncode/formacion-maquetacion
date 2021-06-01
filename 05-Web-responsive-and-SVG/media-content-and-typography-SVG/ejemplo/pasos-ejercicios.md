@@ -97,7 +97,7 @@ Y ahora vamos a jugar con su comportamiendo añadiendo también la propiedad **h
   }
 ```
 
-Si hacemos lo mismo para el vídeo vemos que la propiedad **height** tiene más peso que **width** pero no se aplican ambas.
+Si hacemos lo mismo para el vídeo vemos que el comportamiento es distinto, siempre coge la propiedad con mayor tamaño y ajusta la otra sin deformar el vídeo.
 
 ---
 
